@@ -48,17 +48,16 @@ public class EmployeesIndexServlet extends HttpServlet {
                 .setMaxResults(15)
                 .getResultList();
 
-        long employees_count = em.createNamedQuery("getEmployeesCount", Long.class).getSingleResult();
+        long employees_count = (long)em.createNamedQuery("getEmployeesCount", Long.class).getSingleResult();
         em.close();
 
         //値セット
         request.setAttribute("employees", employees);
         request.setAttribute("employees_count", employees_count);
         request.setAttribute("page", page);
-        Object flush = request.getSession().getAttribute("flush");
 
-        if (flush != null) {
-            request.setAttribute("flush", flush);
+        if (request.getSession().getAttribute("flush") != null) {
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
 
