@@ -35,7 +35,7 @@ public class Employee {
     private String password;
 
     @Column(name = "admin_flg", nullable = false)
-    private int admin_flg;
+    private Integer admin_flg;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -44,13 +44,13 @@ public class Employee {
     private Timestamp updated_at;
 
     @Column(name = "delete_flg", nullable = false)
-    private int delete_flg;
+    private Integer delete_flg;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -78,11 +78,11 @@ public class Employee {
         this.password = password;
     }
 
-    public int getAdmin_flg() {
+    public Integer getAdmin_flg() {
         return admin_flg;
     }
 
-    public void setAdmin_flg(int admin_flg) {
+    public void setAdmin_flg(Integer admin_flg) {
         this.admin_flg = admin_flg;
     }
 
@@ -102,11 +102,12 @@ public class Employee {
         this.updated_at = updated_at;
     }
 
-    public int getDelete_flg() {
+    public Integer getDelete_flg() {
         return delete_flg;
     }
 
-    public void setDelete_flg(int delete_flg) {
+    public void setDelete_flg(Integer delete_flg) {
         this.delete_flg = delete_flg;
     }
+
 }
