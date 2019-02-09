@@ -17,7 +17,7 @@
         }
         </script>
         <form method="post" action="<c:url value='/employees/delete?id=${employees.id}'/>">
-            <input type="hidden" value="<c:out value='${_token}'/>"/>
+            <input type="hidden" name="_token" value="<c:out value='${_token}'/>"/>
         </form>
     </c:param>
 </c:import>
