@@ -151,7 +151,11 @@ table#report_list .report_action {
 	width: 13;
 }
 
-pre{
-    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", "MS PGothic",
-        "Helvetica", "Arial", sans-selif;
+pre {
+	font-family: "Hiragino Kaku Gothic Pro", "Meiryo", "MS PGothic",
+		"Helvetica", "Arial", sans-selif;
+}
+
+h3 {
+	font-size: large;
 }
