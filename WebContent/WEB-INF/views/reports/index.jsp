@@ -25,6 +25,7 @@
                 </tr>
             </c:forEach>
         </table>
+        （全<c:out value="${reports_count}"/>件）<br>
         <c:forEach var="p" begin="1" end="${((reports_count - 1) / 15) + 1}" step="1">
             <c:choose>
                 <c:when test="${p == page}">

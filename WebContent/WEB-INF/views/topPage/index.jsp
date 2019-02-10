@@ -10,22 +10,23 @@
         </c:if>
         <h2>日報管理システムへようこそ</h2>
         <h3>自分の日報一覧</h3>
-        <table>
+        <table id="report_list">
             <tr>
-                <th>氏名</th>
-                <th>日付</th>
-                <th>タイトル</th>
-                <th>操作</th>
+                <th class="report_name">氏名</th>
+                <th class="report_date">日付</th>
+                <th class="report_title">タイトル</th>
+                <th class="report_action">操作</th>
             </tr>
             <c:forEach var="report" items="${reports}" varStatus="status">
                 <tr class="row${status.count % 2}">
-                    <td><c:out value="${report.employee.name}"/></td>
-                    <td><fmt:formatDate value="${report.report_date}" pattern="yyyy-MM-dd"/></td>
-                    <td><c:out value="${report.title}"/></td>
-                    <td></td>
+                    <td class="report_name"><c:out value="${report.employee.name}"/></td>
+                    <td class="report_date"><fmt:formatDate value="${report.report_date}" pattern="yyyy-MM-dd"/></td>
+                    <td class="report_title"><c:out value="${report.title}"/></td>
+                    <td class="report_action"><a href="<c:url value='/reports/show?id=${report.id}'/>">詳細を見る</a></td>
                 </tr>
             </c:forEach>
         </table>
+        （全<c:out value="${reports_count}"/>件）<br>
         <c:forEach var="p" begin="1" end="${((reports_count - 1) / 15) + 1}" step="1">
             <c:choose>
                 <c:when test="${p == page}">
