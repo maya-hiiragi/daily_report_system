@@ -28,9 +28,9 @@ public class Report {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(targetEntity = Employee.class)
+    @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
-    private Integer employee_id;
+    private Employee employee;
 
     @Column(name = "report_date", nullable = false)
     private Date report_date;
@@ -56,12 +56,12 @@ public class Report {
         this.id = id;
     }
 
-    public Integer getEmployee_id() {
-        return employee_id;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setEmployee_id(Integer employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Date getReport_date() {
