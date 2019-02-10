@@ -7,7 +7,7 @@
 	   <c:forEach var="error" items="${errors}">
 	       ・<c:out value="${error}"/><br>
 	   </c:forEach>
-	</div>"
+	</div>
 </c:if>
 <label for="name">氏名</label><br/>
 <input type="text" name ="name" disabled="disabled" value="<c:out value='${login_employee.name}'/>"/><br/>

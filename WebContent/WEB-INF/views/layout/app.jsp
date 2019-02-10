@@ -18,11 +18,13 @@
 	                        <a href="<c:url value='/employees/index'/>">従業員管理</a>&nbsp;
 	                    </c:if>
 	                    <a href="<c:url value='/reports/index'/>">日報管理</a>&nbsp;
-		                <div id="employee_name">
-		                   <c:out value="${login_employee.name}"/>&nbsp;
-		                </div>
+                    </c:if>
+                </div>
+                <div id="employee_name">
+                    <c:if test="${login_employee != null}">
+                        <c:out value="${login_employee.name}"/>&nbsp;さん&nbsp;&nbsp;&nbsp;
 		                <a href="<c:url value='/logout'/>">ログアウト</a>
-	                </c:if>
+		            </c:if>
                 </div>
             </div>
             <div id="content">
