@@ -51,13 +51,13 @@ public class EmployeesCreateServlet extends HttpServlet {
                     request.getServletContext().getAttribute("salt").toString());
             e.setPassword(password);
 
-            int admin_flg = Integer.parseInt(request.getParameter("admin_flg"));
-            e.setAdmin_flg(admin_flg);
+            int admin_flag = Integer.parseInt(request.getParameter("admin_flag"));
+            e.setAdmin_flag(admin_flag);
 
             Timestamp t = new Timestamp(System.currentTimeMillis());
             e.setCreated_at(t);
             e.setUpdated_at(t);
-            e.setDelete_flg(0);
+            e.setDelete_flag(0);
 
             List<String> errors = EmployeeValidator.validate(e, true, true);
 

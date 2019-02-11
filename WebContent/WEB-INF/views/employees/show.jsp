@@ -19,7 +19,7 @@
 		                <th>権限</th>
 		                <td>
 		                    <c:choose>
-		                        <c:when test="${employees.admin_flg == 0}">
+		                        <c:when test="${employees.admin_flag == 0}">
 		                            <c:out value="一般"/>
 		                        </c:when>
 		                        <c:otherwise>

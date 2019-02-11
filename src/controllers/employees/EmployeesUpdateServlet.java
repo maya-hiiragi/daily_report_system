@@ -63,8 +63,8 @@ public class EmployeesUpdateServlet extends HttpServlet {
                 password_check_flg = true;
             }
 
-            int admin_flg = Integer.parseInt(request.getParameter("admin_flg"));
-            e.setAdmin_flg(admin_flg);
+            int admin_flag = Integer.parseInt(request.getParameter("admin_flag"));
+            e.setAdmin_flag(admin_flag);
 
             Timestamp updated_at = new Timestamp(System.currentTimeMillis());
             e.setUpdated_at(updated_at);

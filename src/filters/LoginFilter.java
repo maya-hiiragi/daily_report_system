@@ -54,7 +54,7 @@ public class LoginFilter implements Filter {
                 res.sendRedirect(req.getContextPath() + "/login");
                 return;
 
-            } else if (req.getServletPath().matches("/employees.*") && e.getAdmin_flg() == 0) {
+            } else if (req.getServletPath().matches("/employees.*") && e.getAdmin_flag() == 0) {
                 res.sendRedirect(req.getContextPath() + "/");
                 return;
             }

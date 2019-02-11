@@ -37,5 +37,6 @@
                 </c:otherwise>
             </c:choose>
         </c:forEach>
+        <p><a href="<c:url value='/reports/new'/>">新規日報の登録</a></p>
     </c:param>
 </c:import>

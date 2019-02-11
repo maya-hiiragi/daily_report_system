@@ -15,7 +15,7 @@ import javax.persistence.Table;
         @NamedQuery(name = "getAllEmployees", query = "select e from Employee as e order by e.id desc "),
         @NamedQuery(name = "getEmployeesCount", query = "select count(e) from Employee as e "),
         @NamedQuery(name = "checkRegisteredCode", query = "select count(e) from Employee as e where e.code = :code "),
-        @NamedQuery(name = "checkLoginCodeAndPassword", query = "select e from Employee as e where e.delete_flg = 0 and e.code = :code and e.password = :pass")
+        @NamedQuery(name = "checkLoginCodeAndPassword", query = "select e from Employee as e where e.delete_flag = 0 and e.code = :code and e.password = :pass")
 })
 @Table(name = "employees")
 @Entity
@@ -34,8 +34,8 @@ public class Employee {
     @Column(name = "password", length = 64, nullable = false)
     private String password;
 
-    @Column(name = "admin_flg", nullable = false)
-    private Integer admin_flg;
+    @Column(name = "admin_flag", nullable = false)
+    private Integer admin_flag;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -43,8 +43,8 @@ public class Employee {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name = "delete_flg", nullable = false)
-    private Integer delete_flg;
+    @Column(name = "delete_flag", nullable = false)
+    private Integer delete_flag;
 
     public Integer getId() {
         return id;
@@ -78,12 +78,12 @@ public class Employee {
         this.password = password;
     }
 
-    public Integer getAdmin_flg() {
-        return admin_flg;
+    public Integer getAdmin_flag() {
+        return admin_flag;
     }
 
-    public void setAdmin_flg(Integer admin_flg) {
-        this.admin_flg = admin_flg;
+    public void setAdmin_flag(Integer admin_flag) {
+        this.admin_flag = admin_flag;
     }
 
     public Timestamp getCreated_at() {
@@ -102,12 +102,12 @@ public class Employee {
         this.updated_at = updated_at;
     }
 
-    public Integer getDelete_flg() {
-        return delete_flg;
+    public Integer getDelete_flag() {
+        return delete_flag;
     }
 
-    public void setDelete_flg(Integer delete_flg) {
-        this.delete_flg = delete_flg;
+    public void setDelete_flag(Integer delete_flag) {
+        this.delete_flag = delete_flag;
     }
 
 }

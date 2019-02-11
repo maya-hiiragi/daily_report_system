@@ -38,7 +38,7 @@ public class EmployeesDeleteServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
             Employee e = em.find(Employee.class, Integer.parseInt(request.getParameter("id")));
 
-            e.setDelete_flg(1);
+            e.setDelete_flag(1);
 
             Timestamp t = new Timestamp(System.currentTimeMillis());
             e.setUpdated_at(t);
